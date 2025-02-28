@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="./main.css">
+  <link rel="icon" type="image/x-icon" href="<%= favicon %>">
+  <style>
+    :root {
+      --primary-bg: <%= colors.background %>;
+      --hover-bg: <%= colors.backgroundHover %>;
+      --border-color: <%= colors.linkBorder %>;
+      --border-disabled: <%= colors.linkBorderDisabled %>;
+      --border-animation-start: <%= colors.linkBorderAnimation %>;
+      --text-color: <%= colors.text %>;
+      --font-family: <%= fontFamily %>;
+      --background-image: url("<%= background %>");
+    }
+    <% if (isTitleClickable) { %>
+      .center-text {
+        background-color: rgba(0,0,0,0.5);
+        padding: 15px;
+        border-radius: 15px;
+        cursor: pointer;
+        z-index: 999999;
+      }
+
+      .center-text:hover {
+        background-color: var(--hover-bg);
+        animation: border-animation 0.8s infinite alternate;
+      }
+    <% } %>
+  </style>
+</head>
+
+<body>
+  <style>
+    <% sites.forEach((site, index)=> {%> 
+      @media only screen and (min-width: 601px) {
+        .link:nth-child(<%=index+1 %>) {
+          transform: rotate(<%=(360 / sites.length) * (index+1) %>deg) translate(250px) rotate(-<%=(360 / sites.length) * (index+1) %>deg);
+        }
+      }
+    <%});%>
+  </style>
+  <div class="container">
+    <% if (isTitleClickable) { %>
+      <a href="<%= titleLink %>"><h1 class="center-text"><%= title %></h1></a>
+    <% } else { %>
+      <h1 class="center-text"><%= title %></h1>
+      <% }%>
+    <div class="circle">
+      <% sites.forEach(site=> { %>
+        <a class="link<%= site.disabled ? ' disabled' : '' %>" href="<%= site.url %>">
+          <%= site.name %>
+        </a>
+        <% }); %>
+    </div>
+  </div>
+</body>
+
+</html>

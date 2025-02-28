@@ -1,0 +1,10 @@
+[
+    { "url": "https://www.google.com", "name": "Google"},
+    { "url": "https://www.youtube.com", "name": "Youtube"},
+    { "url": "https://drive.google.com", "name": "Drive"},
+    { "url": "https://mail.google.com/mail", "name": "Mail"},
+    { "url": "https://www.google.it/maps", "name": "Maps"},
+    { "url": "", "name": "Soon"},
+    { "url": "", "name": "Soon"},
+    { "url": "", "name": "Something"}
+]

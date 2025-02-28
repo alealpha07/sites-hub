@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+@media only screen and (min-width: 601px) {
+
+  .link {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    width: 80px !important;
+  }
+
+  .circle {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 400px;
+  }
+
+  .center-text {
+    position: absolute;
+    font-size: 34px;
+    color: var(--text-color);
+    margin: 0;
+    margin-top: 10px;
+    padding: 20px;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+  }
+}
+
+* {
+  font-family: var(--font-family);
+  -webkit-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+
+html {
+  max-width: 100vw;
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-image: var(--background-image);
+  background-size: cover;
+  background-position: center;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.center-text {
+  width: fit-content;
+  font-size: 34px;
+  color: var(--text-color);
+  margin: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.link {
+  display: block;
+  width: 100px;
+  min-width: fit-content;
+  height: 50px;
+  border-radius: 15px;
+  background-color: var(--primary-bg);
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: bold;
+  text-align: center;
+  line-height: 50px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  padding-left: 3px;
+  padding-right: 3px;
+  border: solid var(--border-color) 1px;
+  margin-top: 5px;
+}
+
+.link:hover {
+  background-color: var(--hover-bg);
+  animation: border-animation 0.8s infinite alternate;
+}
+
+.link.disabled {
+  text-decoration: none;
+  cursor: not-allowed;
+  pointer-events: none;
+  border: solid var(--border-disabled) 1px;
+}
+
+@keyframes border-animation {
+  0% {
+    border-color: var(--border-animation-start);
+  }
+  100% {
+    border-color: var(--border-color);
+    box-shadow: 0 0 3px 3px var(--border-animation-start);
+  }
+}
