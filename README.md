@@ -11,7 +11,7 @@ Sites Hub is a dynamic web-based hub where you can list sites, and if they are r
 
 ### 1. Clone the Repository
 ```bash
-git clone TODO add repo url
+git clone https://github.com/alealpha07/sites-hub.git
 cd sites-hub
 ```
 
